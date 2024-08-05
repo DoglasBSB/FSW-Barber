@@ -12,7 +12,7 @@ model User {
   email     String
   name      String
   bookings  Booking[]
-  cratedAt  DateTime  @default(now())
+  createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
 }
 
@@ -23,7 +23,7 @@ model Barbershop {
   phones      String[]
   description String
   imageUrl    String
-  cratedAt    DateTime            @default(now())
+  createdAt   DateTime            @default(now())
   updatedAt   DateTime            @updatedAt
   services    BarbershopService[]
 }
@@ -46,6 +46,6 @@ model Booking {
   serviceId String
   service   BarbershopService @relation(fields: [serviceId], references: [id])
   date      DateTime
-  cratedAt  DateTime          @default(now())
+  createdAt DateTime          @default(now())
   updatedAt DateTime          @updatedAt
 }
